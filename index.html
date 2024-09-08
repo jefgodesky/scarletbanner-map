@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map of Avar</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .modal {
+            display: none;
+        }
+
+        .modal.open {
+            background: #ffffff;
+            box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+            display: block;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            height: 80vh;
+            left: calc(50vw - 25em);
+            overflow: auto;
+            padding: 2em;
+            position: absolute;
+            top: 10vh;
+            width: 40em;
+            z-index: 1000;
+        }
+
+        .modal.right {
+            left: auto;
+            right: 2em;
+            top: 4em;
+            height: 70vh;
+        }
+        
+        .modal .close {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            float: right;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #map {
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .point-marker {
+            background-color: black;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        #measurements-record details {
+            margin-bottom: 1em;
+        }
+
+        #measurements-record summary {
+            background: #eee;
+            border: 1px solid #aaa;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 1em;
+        }
+
+        #measurements-record table {
+            width: 100%;
+        }
+
+        #measurements-record th {
+            text-align: left;
+            border-bottom: 1px solid #000;
+            padding: 0.5em;
+        }
+
+        #measurements-record td {
+            padding: 0.5em;
+        }
+
+        #measurements-record tbody tr:nth-child(even) td {
+            background: #f8f8f8;
+        }
+
+        #measurements-record .num {
+            text-align: right;
+        }
+
+        #measurements-record tfoot td {
+            font-weight: bold;
+            border-top: 1px solid #000;
+        }
+    </style>
+    <script type="module" crossorigin src="/assets/index-BKBAj7HG.js"></script>
+  </head>
+  <body>
+    <div id="help" class="modal">
+      <button class="close">&times;</button>
+      <h1>How to use this map</h1>
+      <h2>Measuring</h2>
+      <p>Hold down <code>[m]</code> to create a path. While holding down
+        the <code>[m]</code> key, when you click on the map the point where
+        you click will be added to the current path. When you release the
+        <code>[m]</code> key the path is completed. Pressing the <code>[m]</code>
+        key again will start a new path.</p>
+      <p>The measurements modal (which you can toggle by clicking on
+        <strong>Measurements</strong> in the top right corner) displays all
+        of the paths you&rsquo;ve made. The table displays each point you
+        clicked, along with its distance from the previous point, and a final
+        tally of the total length of the path (all measurements are in
+        kilometers).</p>
+      <h2>Views</h2>
+      <p>Use the dropdown box in the bottom left corner to choose which
+        view you&rsquo;d like to see.</p>
+    </div>
+    <div id="measurements" class="modal right">
+      <button class="close">&times;</button>
+      <h1>Measurements</h1>
+      <div id="measurements-record" class="null">
+        <p>You haven&rsquo;t taken any measurements yet. Hold <code>[m]</code>
+          and click on the map to define a path. The distance of that path
+          will be recorded here. The path will be complete when you release
+          the <code>[m]</code> key.</p>
+      </div>
+    </div>
+    <div id="map"></div>
+  </body>
+</html>
