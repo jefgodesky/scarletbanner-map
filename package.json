@@ -1,0 +1,19 @@
+{
+  "name": "scarletbanner-map",
+  "version": "1.0.0",
+  "description": "An interactive map of Avar, the world of the Scarlet Banner.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jefgodesky/scarletbanner-map.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jefgodesky/scarletbanner-map/issues"
+  },
+  "homepage": "https://github.com/jefgodesky/scarletbanner-map#readme",
+  "author": "Jason Godesky <jason@scarletbanner.com>",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
