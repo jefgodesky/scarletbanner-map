@@ -1,11 +1,11 @@
 import { Control, Map, LatLngBounds, imageOverlay } from 'leaflet'
 
 const views: { [key: string]: string } = {
-  'Landforms': '/maps/landforms.png',
-  'Köppen climate areas': '/maps/koppen.png',
-  'Ocean currents': '/maps/currents.png',
-  'Prevailing winds': '/maps/winds.png',
-  'Tectonic plates': '/maps/tectonics.png'
+  'Landforms': './maps/landforms.png',
+  'Köppen climate areas': './maps/koppen.png',
+  'Ocean currents': './maps/currents.png',
+  'Prevailing winds': './maps/winds.png',
+  'Tectonic plates': './maps/tectonics.png'
 }
 
 const initView = (map: Map, bounds: LatLngBounds) => {
