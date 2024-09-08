@@ -13,8 +13,10 @@
   "homepage": "https://github.com/jefgodesky/scarletbanner-map#readme",
   "author": "Jason Godesky <jason@scarletbanner.com>",
   "license": "GPL-3.0-or-later",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
     "open": "open-cli index.html"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "chai": "^5.1.1",
     "mocha": "^10.7.3",
     "open-cli": "^8.0.0",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3"
   }
 }
