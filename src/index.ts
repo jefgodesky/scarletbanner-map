@@ -11,8 +11,8 @@ const bounds = latLngBounds(
 const options: MapOptions = {
   crs: CRS.EPSG4326,
   center: latLng(0, 0),
-  zoom: 3,
-  minZoom: 3,
+  zoom: 2,
+  minZoom: 2,
   maxZoom: 7,
   maxBounds: bounds,
   maxBoundsViscosity: 1

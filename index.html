@@ -22,10 +22,11 @@
             font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
             height: 80vh;
             left: calc(50vw - 25em);
+            overflow: auto;
             padding: 2em;
             position: absolute;
             top: 10vh;
-            width: 50em;
+            width: 40em;
             z-index: 1000;
         }
 
@@ -59,13 +60,63 @@
             height: 10px;
             border-radius: 5px;
         }
+
+        #measurements-record details {
+            margin-bottom: 1em;
+        }
+
+        #measurements-record summary {
+            background: #eee;
+            border: 1px solid #aaa;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 1em;
+        }
+
+        #measurements-record table {
+            width: 100%;
+        }
+
+        #measurements-record th {
+            text-align: left;
+            border-bottom: 1px solid #000;
+            padding: 0.5em;
+        }
+
+        #measurements-record td {
+            padding: 0.5em;
+        }
+
+        #measurements-record tbody tr:nth-child(even) td {
+            background: #f8f8f8;
+        }
+
+        #measurements-record .num {
+            text-align: right;
+        }
+
+        #measurements-record tfoot td {
+            font-weight: bold;
+            border-top: 1px solid #000;
+        }
     </style>
   </head>
   <body>
     <div id="help" class="modal">
       <button class="close">&times;</button>
       <h1>How to use this map</h1>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <h2>Measuring</h2>
+      <p>Hold down <code>[m]</code> to create a path. While holding down
+        the <code>[m]</code> key, when you click on the map the point where
+        you click will be added to the current path. When you release the
+        <code>[m]</code> key the path is completed. Pressing the <code>[m]</code>
+        key again will start a new path.</p>
+      <p>The measurements modal (which you can toggle by clicking on
+        <strong>Measurements</strong> in the top right corner) displays all
+        of the paths you&rsquo;ve made. The table displays each point you
+        clicked, along with its distance from the previous point, and a final
+        tally of the total length of the path (all measurements are in
+        kilometers).</p>
     </div>
     <div id="measurements" class="modal right">
       <button class="close">&times;</button>
