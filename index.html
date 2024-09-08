@@ -28,6 +28,13 @@
             width: 50em;
             z-index: 1000;
         }
+
+        .modal.right {
+            left: auto;
+            right: 2em;
+            top: 4em;
+            height: 70vh;
+        }
         
         .modal .close {
             appearance: none;
@@ -52,6 +59,16 @@
       <button class="close">&times;</button>
       <h1>How to use this map</h1>
       <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div id="measurements" class="modal right">
+      <button class="close">&times;</button>
+      <h1>Measurements</h1>
+      <div id="measurements-record" class="null">
+        <p>You haven&rsquo;t taken any measurements yet. Hold <code>[m]</code>
+          and click on the map to define a path. The distance of that path
+          will be recorded here. The path will be complete when you release
+          the <code>[m]</code> key.</p>
+      </div>
     </div>
     <div id="map"></div>
     <script type="module" src="/src/index.ts"></script>
