@@ -1,6 +1,7 @@
 import { map, latLng, latLngBounds, imageOverlay, MapOptions, CRS } from 'leaflet'
 import initHelp from './help'
 import initMeasurements from './measure'
+import initView from './view'
 
 const bounds = latLngBounds(
   latLng(-90, -180),
@@ -19,7 +20,7 @@ const options: MapOptions = {
 }
 
 const avar = map('map', options)
-imageOverlay('map.png', bounds).addTo(avar)
 avar.fitBounds(bounds)
 initHelp(avar)
 initMeasurements(avar)
+initView(avar, bounds)
