@@ -16,8 +16,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "dev": "vite",
     "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
     "@types/geojson": "^7946.0.14",
