@@ -11,6 +11,34 @@
             padding: 0;
         }
 
+        .modal {
+            display: none;
+        }
+
+        .modal.open {
+            background: #ffffff;
+            box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+            display: block;
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            height: 80vh;
+            left: calc(50vw - 25em);
+            padding: 2em;
+            position: absolute;
+            top: 10vh;
+            width: 50em;
+            z-index: 1000;
+        }
+        
+        .modal .close {
+            appearance: none;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            float: right;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
         #map {
             bottom: 0;
             position: absolute;
@@ -20,6 +48,11 @@
     </style>
   </head>
   <body>
+    <div id="help" class="modal">
+      <button class="close">&times;</button>
+      <h1>How to use this map</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
     <div id="map"></div>
     <script type="module" src="/src/index.ts"></script>
   </body>
